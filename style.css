@@ -6,21 +6,22 @@
   display: flex;
   padding: 20px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 1850px;
 }
 .child {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 200px;
 }
 .title {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 20px;
+  
 }
 
 .search {
