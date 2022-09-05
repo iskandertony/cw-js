@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="search">
+      <div><input type="text" id="input" placeholder="Search for .." /></div>
+      <div id="button" onclick="search()">
+        <button>search</button>
+      </div>
+      <div>
+        <select id="select" onchange="selectName()">
+          <option value="All">All</option>
+          <option value="Names">Names</option>
+          <option value="Ganre">Ganre</option>
+          <option value="Episodes">Episodes</option>
+          <option value="Creator">Creator</option>
+        </select>
+      </div>
+      <div id="result"></div>
+    </div>
+    <div class="title">
+      <div id="names"><h1>Names</h1></div>
+      <h1>Ganre</h1>
+      <h1>Episodes</h1>
+      <h1>Creator</h1>
+    </div>
+    <div class="text">
+      <pre>JSON GOES HERE</pre>
+    </div> 
+    <!-- <div>
+      <div id="result"></div>
+    </div> -->
+    <script src="script.js"></script> 
+  </body>
+</html>

@@ -1,0 +1,30 @@
+.text {
+  display: flex;
+}
+
+.parent {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1850px;
+}
+.child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
