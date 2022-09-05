@@ -70,6 +70,42 @@ function displayDataNames(data) {
   });
 }
 
+function sort() {
+  let sort = document.getElementById("sort").value;
+  let localData = localStorage.getItem("data");
+  const localArray = JSON.parse(localData);
+  if (sort === "a-z") {
+    let sortNames = localArray.sort(function (a, b) {
+      let nameA = a.title.toLowerCase();
+      let nameB = b.title.toLowerCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    displayDataNames(sortNames);
+  }
+  if (sort === "z-a") {
+    let sortNames = localArray.sort(function (a, b) {
+      let nameA = a.title.toLowerCase();
+      let nameB = b.title.toLowerCase();
+      if (nameB < nameA) {
+        return -1;
+      }
+      if (nameB > nameA) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+    displayDataNames(sortNames);
+  }
+}
+
 // let cartoon = [
 //   { name: `a`, age: 1 },
 //   { name: `b`, age: 2 },

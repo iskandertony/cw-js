@@ -28,3 +28,13 @@
   align-items: center;
   padding: 20px;
 }
+
+.names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.names-selector {
+  margin-left: 15px;
+}
