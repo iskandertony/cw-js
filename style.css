@@ -20,12 +20,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 20px;
-  
 }
 
 .search {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }

@@ -48,9 +48,26 @@ function selectName() {
   let select = document.getElementById("select").value;
   let localData = localStorage.getItem("data");
   const localArray = JSON.parse(localData);
-  // // let name = localArray[0].title;
+  if (select === "Names") {
+    console.log("iska");
+    let filterData = localArray.filter((item) => item.title);
+    displayDataNames(filterData);
+  }
+  if (select === "All") {
+    let filterData = localArray;
+    displayData(filterData);
+  }
+}
 
-  // console.log(name);
+function displayDataNames(data) {
+  const container = document.querySelector("pre");
+  let result = "";
+  data.forEach((element) => {
+    result += `<div class="parent">
+      <div class="child"  id="title">${element.title}</div>
+      </div>`;
+    container.innerHTML = result;
+  });
 }
 
 // let cartoon = [
