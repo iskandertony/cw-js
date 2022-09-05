@@ -19,6 +19,7 @@ function fetchData() {
 fetchData();
 
 function displayData(data) {
+  console.log(data);
   const container = document.querySelector("pre");
   let result = "";
   data.forEach((element) => {
@@ -48,27 +49,18 @@ function selectName() {
   let select = document.getElementById("select").value;
   let localData = localStorage.getItem("data");
   const localArray = JSON.parse(localData);
-  if (select === "Names") {
-    console.log("iska");
-    let filterData = localArray.filter((item) => item.title);
-    displayDataNames(filterData);
-  }
+  console.log(localArray[0].genre);
+  console.log(select);
+
   if (select === "All") {
     let filterData = localArray;
     displayData(filterData);
+  } else {
+    let filterData = localArray.filter((item) => item.genre.includes(select))
+    displayData(filterData)
   }
 }
 
-function displayDataNames(data) {
-  const container = document.querySelector("pre");
-  let result = "";
-  data.forEach((element) => {
-    result += `<div class="parent">
-      <div class="child"  id="title">${element.title}</div>
-      </div>`;
-    container.innerHTML = result;
-  });
-}
 
 function sort() {
   let sort = document.getElementById("sort").value;
@@ -87,7 +79,7 @@ function sort() {
         return 0;
       }
     });
-    displayDataNames(sortNames);
+    displayData(sortNames);
   }
   if (sort === "z-a") {
     let sortNames = localArray.sort(function (a, b) {
@@ -102,10 +94,23 @@ function sort() {
         return 0;
       }
     });
-    displayDataNames(sortNames);
+    displayData(sortNames);
   }
 }
 
+function selectEpisode() {
+  let select = document.getElementById("episode").value;
+  let localData = localStorage.getItem("data");
+  const localArray = JSON.parse(localData);
+  let sortEpisode = localArray
+  if (select === `More`) {
+    sortEpisode = localArray.filter((item) => item.episodes > 100)
+  }
+  if (select === `Less`) {
+    sortEpisode = localArray.filter((item) => item.episodes < 100)
+  }
+  displayData(sortEpisode)
+}
 // let cartoon = [
 //   { name: `a`, age: 1 },
 //   { name: `b`, age: 2 },
@@ -123,3 +128,4 @@ function sort() {
 //   </div>`;
 // });
 // result.innerHTML = box;
+//iska
